@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- 使用thymeleaf需引入 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #father{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 280px;
+            width: 480px;
+            border: 1px solid;
+        }
+        span{
+            font-size: 30px;
+        }
+        input[type=text]{
+            height: 30px;
+            width: 320px;
+        }
+        #son{
+            height: 55px;
+        }
+        input[type=submit]{
+            position: absolute;
+            top: 230px;
+            right: 28px;
+            height: 35px;
+            width: 80px;
+            background: url("img/buttonbg.png");
+        }
+        #worker{
+            height: 35px;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+<div id="father">
+    <form action="insertPeople2" method="post">
+        <div id="son"><span>姓&nbsp;&nbsp;&nbsp;名:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pname"/></div>
+        <div id="son"><span>始发地：</span><input type="text" name="pfrom" /></div>
+        <div id="son"><span>电&nbsp;&nbsp;&nbsp;话：</span>&nbsp;<input type="text" name="pphone"/></div>
+        <div id="son"><span>职&nbsp;&nbsp;&nbsp;位：</span>&nbsp;<input type="text" name="paddress"/></div>
+        <input type="submit" value="确定提交" />
+    </form>
+</div>
+</body>
+</html>

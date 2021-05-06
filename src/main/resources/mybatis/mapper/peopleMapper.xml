@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzh.demo.dao.peopleDao">
+    <select id="seeAll" resultType="People" parameterType="People">
+        select * from people
+    </select>
+    <insert id="insert" parameterType="People">
+        insert into people values (default,#{pname},#{pfrom},#{pphone},#{paddress})
+    </insert>
+    <select id="seeByName" resultType="People">
+        select * from people
+        <where>
+            <if test="pname!=null and pname!=''">
+                pname like concat('%',#{pname},'%')
+            </if>
+        </where>
+    </select>
+    <select id="seeByFrom" resultType="People">
+        select * from people
+        <where>
+            <if test="pfrom!=null and pfrom!=''">
+                pfrom like concat('%',#{pfrom},'%')
+            </if>
+        </where>
+    </select>
+    <delete id="delete" parameterType="People" >
+        delete from people where pid=#{pid}
+    </delete>
+    <update id="update" parameterType="People">
+        update people set pname=#{pname},pfrom=#{pfrom},pphone=#{pphone},paddress=#{paddress} where pid=#{pid}
+    </update>
+</mapper>

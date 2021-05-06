@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- 使用thymeleaf需引入 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>登录界面</title>
+        <style type="text/css">
+            #show{
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                margin: auto;
+                background: url("img/logininfo3.png");
+                text-align: center;
+                height: 340px;
+                width: 650px;
+            }
+            #user{
+                position: relative;
+                top: 80px;
+                left: 120px;
+                width:280px;
+                height:48px;
+                background: url("img/loginuser.png") no-repeat;
+                border:none;
+                line-height:48px;
+                padding-left:44px;
+                font-size:14px;
+                font-weight:bold;
+            }
+            #password{
+                position: relative;
+                top: 110px;
+                left:120px;
+                width:280px;
+                height:48px;
+                background: url("img/loginpassword.png") no-repeat;
+                border:none;
+                line-height:48px;
+                padding-left:44px;
+                font-size:14px;
+            }
+            input[type=submit]{
+                position: relative;
+                top: 130px;
+                left: 40px;
+                width: 100px;
+                height: 45px;
+                background: url("img/buttonbg.png");
+            }
+            input[type=reset]{
+                position: relative;
+                top: 130px;
+                left: 170px;
+                width: 100px;
+                height: 45px;
+                background:url("img/buttonbg.png");
+            }
+            #reg{
+                position: relative;
+                top: 135px;
+                right: -230px;
+            }
+        </style>
+    </head>
+<body>
+<div id="show">
+    <form action="login1" method="get">
+        <ul>
+            <input type="text" placeholder="用户名" id="user" name="user" value=""/><br />
+            <input type="password" placeholder="密码" id="password" name="password" value=""/><br />
+            <input type="submit" value="登录" style="color:white"/>
+            <input type="reset" value="重置" style="color: white"/>
+        </ul>
+    </form>
+    <div id="reg">
+        还没有账号？注册
+    </div>
+</div>
+</body>
+</html>

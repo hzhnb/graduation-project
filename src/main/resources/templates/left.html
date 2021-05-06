@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- 使用thymeleaf需引入 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>操作界面左部</title>
+    <style type="text/css">
+        body{
+            background:url("img/leftmenubg.gif");
+        }
+        .first{
+            height: 30px;
+            background-color:orange ;
+            border: 0.02px solid;
+            border-color:darkorange ;
+            cursor: pointer;
+        }
+        .fontsize{
+            font-size: 25px;
+        }
+        .second{
+
+        }
+        .third{
+            position: relative;
+            left: 60px;
+        }
+        .height{
+            font-size:20px ;
+        }
+        .fourth{
+            height: 28px;
+        }
+        .fontsize3{
+            font-size: 18px;
+        }
+        .fifth{
+            height: 25px;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var flag = true;
+        function dao1(){
+            $("#password").toggle(200);
+        }
+        function dao2(){
+            $("#ru").toggle(100);
+        }
+        function select1(){
+            if(flag){
+                $("#select1").slideDown(100);
+                $("#s1").attr("src","img/uew_icon_hover.png");
+                flag = false;
+            }else{
+                $("#select1").slideUp(100);
+                $("#s1").attr("src","img/fjt.png");
+                flag = true;
+            }
+        }
+    </script>
+</head>
+<body>
+<div onclick="dao1()" class="first" ><img src="img/leftico01.png" id="user"/> &nbsp;&nbsp;<span class="fontsize" >用户管理</span></div>
+<div id="password" style="display: none;" class="second">
+    <dd><div class="fourth"><a th:href="alterPwd1" target="aa"><img src="img/fjt.png"/>&nbsp;&nbsp;<span class="height">修改密码</span></a></div> </dd>
+</div>
+<div onclick="dao2()" class="first"><img src="img/leftico01.png" />&nbsp;&nbsp;<span class="fontsize" >信息管理</span></div>
+<div id="ru" style="display: none;" class="second">
+    <dd><div class="fourth"><a th:href="insertPeople1" target="aa"><img src="img/fjt.png"/>&nbsp;&nbsp;<span class="height">住院登记</span></a></div> </dd>
+    <dd><div onclick="select1()" class="fourth" ><img src="img/fjt.png" id="s1"/>&nbsp;&nbsp;<span class="height">住院查询</span></div> </dd>
+    <div id="select1" style="display: none;" class="third">
+        <div class="fifth"><a th:href="seeAll1" target="aa"><img src="img/sub-menu-icon.png"/>&nbsp;&nbsp;<span class="fontsize3">查询全部</span></a></div>
+        <div class="fifth"><a th:href="seeByName1" target="aa"><img src="img/sub-menu-icon.png" />&nbsp;&nbsp;<span class="fontsize3">按姓名查询</span></a></div>
+        <div class="fifth"><a href="seeByFrom1" target="aa"><img src="img/sub-menu-icon.png" />&nbsp;&nbsp;<span class="fontsize3">按始发地查询</span></a></div>
+    </div>
+    <dd><div class="fourth"><a th:href="opera" target="aa"><img src="img/fjt.png" />&nbsp;&nbsp;<span class="height">信息操作</span></a></div></dd>
+</div>
+
+</body>
+</html>

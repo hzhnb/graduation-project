@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- 使用thymeleaf需引入 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .imgtable{
+            border: 0.5px solid;
+            border-collapse:collapse;
+        }
+        .imgtable th{
+            border-right-style:none ;
+            border-left-style: none;
+            border-bottom:solid 2px #d7a372;
+            text-indent:21px;
+            text-align:left;
+            background: url("img/th.gif") repeat-x;
+        }
+        .imgtable td{
+            line-height:20px;
+            text-indent:21px;
+            border-right: solid 1px #F2BF74;
+            border-bottom: solid 0.2px #F2BF74;
+        }
+    </style>
+</head>
+<body>
+<table class="imgtable" >
+    <tr height="35px" >
+        <th width="200px" >编号</th>
+        <th width="200px">姓名</th>
+        <th width="200px">始发地</th>
+        <th width="200px">电话</th>
+        <th width="200px">地址</th>
+    </tr>
+    <tr th:each="people:${list}" height="35px" >
+        <td th:text="${people.pid}" ></td>
+        <td th:text="${people.pname}"></td>
+        <td th:text="${people.pfrom}"></td>
+        <td th:text="${people.pphone}"></td>
+        <td th:text="${people.paddress}"></td>
+    </tr>
+</table>
+</body>
+</html>

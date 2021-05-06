@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- 使用thymeleaf需引入 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        input[type=text]{
+            height: 40px;
+            width: 400px;
+        }
+        #pwd{
+            position: absolute;
+            height: 500px;
+            width: 600px;
+            top: 0px;
+            left: 0px;
+        }
+        input[type=submit]{
+            position: relative;
+            top: 60px;
+            left: 440px;
+            background: url("img/buttonbg.png");
+            height: 35px;
+            width: 80px;
+        }
+        .tel{
+            position: relative;
+            top: 50px;
+            height: 80px;
+            width: 600px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-3.3.1.js" ></script>
+    <script type="text/javascript">
+        $(function(){
+            //校验密码修改
+            $("#fm").submit(function(){
+                if($("#newPwd").val()==""){//校验新密码
+                    alert("新密码不能为空");
+                    return false;
+                }else if($("#cfPwd").val()==""){//校验确认密码
+                    alert("确认密码不能为空");
+                    return false;
+                }else if($("#newPwd").val()!=$("#cfPwd").val()){//校验新密码和确认密码是否一致
+                    alert("两次密码 不一致");
+                    return false;
+                }else{
+                    return true;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="pwd">
+        <h1 style="color: red;text-align: center;">密码信息修改</h1>
+        <form action="/alterPwd2" method="post" id="fm" target="_top">
+            <ul class="forminfo">
+                <div class="tel"><span style="font-size: 25px;">新&nbsp;&nbsp;密&nbsp;&nbsp;码</span>&nbsp;&nbsp;&nbsp;<input name="newPwd" id="newPwd" type="text" class="dfinput"  /><i></i></div>
+                <div class="tel"><span style="font-size: 25px;">确认密码</span>&nbsp;&nbsp;&nbsp;<input name="" id="cfPwd" type="text" class="dfinput" /><i></i></div>
+                <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存" /></li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
